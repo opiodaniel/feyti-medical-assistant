@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api'; // Update if Django port changes
+
+// Use the VITE_DJANGO_API_URL environment variable for production
+// Fallback to localhost for local development
+const API_BASE_URL = import.meta.env.VITE_DJANGO_API_URL || 'http://localhost:8000/api';
 
 function App() {
   const [report, setReport] = useState('');
