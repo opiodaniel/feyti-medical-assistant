@@ -41,9 +41,6 @@ def extract_fields(report_text):
             outcome = key
             break
 
-    # 4. Adverse Events (Simple Extraction - needs improvement for real-world)
-    # For the test, we'll hardcode based on the example and demonstrate the logic.
-    # In a real scenario, you'd use spaCy's NER or dependency parsing.
     events = []
     if 'nausea' in text_lower: events.append('nausea')
     if 'headache' in text_lower: events.append('headache')

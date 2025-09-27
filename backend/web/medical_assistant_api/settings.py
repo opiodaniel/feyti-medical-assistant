@@ -46,7 +46,6 @@ INSTALLED_APPS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:3000",
-    # Add your Vercel URL here (e.g., https://feyti-assistant.vercel.app)
     os.environ.get('FRONTEND_URL', 'http://localhost:5173'),
 ]
 
