@@ -70,3 +70,23 @@ Navigate to the backend directory and set up a virtual environment:
 cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run Migrations (creates the SQLite database and tables):
+python manage.py makemigrations reports
+python manage.py migrate
+
+Start the Django API Server:
+python manage.py runserver 8000
+# The API will be available at http://localhost:8000/api/
+
+3. Frontend Setup (React UI)
+Open a new terminal window, navigate to the frontend directory:
+cd ../frontend
+npm install
+
+Start the React Development Server:
+npm run dev
+# The UI will open at http://localhost:<port_number> (e.g., 5173 or 3000)
