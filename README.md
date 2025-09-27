@@ -5,7 +5,6 @@ AI Regulatory Report Assistant: Full-stack application built with Django REST Fr
 
 # 🔬 AI Regulatory Report Assistant (Django/React Full-Stack)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Backend](https://img.shields.io/badge/Backend-Django%20REST%20Framework-green)
 ![Frontend](https://img.shields.io/badge/Frontend-React%20%26%20Vercel-blue)
 ![NLP Logic](https://img.shields.io/badge/Logic-Rule--Based%2FPython-informational)
