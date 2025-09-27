@@ -18,8 +18,8 @@ The project is split into two components:
 2.  **Frontend:** A modern web interface built with React (Vite) that consumes the API.
 
 **Live Demo:**
-* **Frontend (Vercel):** [Link to your Vercel deployment if completed]
-* **Backend API (Render/Heroku/etc.):** [Link to your live Django API base URL if deployed]
+* **Frontend (Vercel):** https://feyti-medical-group.vercel.app/
+* **Backend API (Render):** https://feyti-medical-group-backend.onrender.com/
 
 ---
 
@@ -47,7 +47,7 @@ The project is split into two components:
 | **Database** | SQLite3 (Default Django DB) | Simple persistent storage for processed reports. |
 | **Logic** | Custom Python Rule-Based Extractor | Uses string matching and regex for core extraction. |
 | **Frontend** | React (Vite), Axios | Single Page Application (SPA) for the user interface and API communication. |
-| **Deployment** | Vercel (Frontend), [e.g., Render/Heroku] (Backend) | Hosted and accessible demo. |
+| **Deployment** | Vercel (Frontend), Render (Backend) | Hosted and accessible demo. |
 
 ---
 
