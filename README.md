@@ -9,7 +9,7 @@ AI Regulatory Report Assistant: Full-stack application built with Django REST Fr
 ![Frontend](https://img.shields.io/badge/Frontend-React%20%26%20Vercel-blue)
 ![NLP Logic](https://img.shields.io/badge/Logic-Rule--Based%2FPython-informational)
 
-## 🎯 Project Overview
+## Project Overview
 
 This is a full-stack take-home assignment simulating a core workflow for Feyti Medical Group's AIcyclinder platform. The application processes raw adverse event text reports and extracts key structured data points using Python logic, presenting the results via a decoupled React frontend.
 
@@ -23,23 +23,23 @@ The project is split into two components:
 
 ---
 
-## ✨ Features Implemented
+## Features Implemented
 
 ### Core Requirements
-* ✅ **POST /api/process-report:** Accepts raw report text and returns structured JSON data.
-* ✅ **NLP/Rule-Based Logic:** Extracts Drug Name, Adverse Events, Severity, and Outcome.
-* ✅ **React Input Form:** A text area to paste reports and a "Process" button.
-* ✅ **Results Display:** Clear presentation of the structured data on the frontend.
+* **POST /api/process-report:** Accepts raw report text and returns structured JSON data.
+* **NLP/Rule-Based Logic:** Extracts Drug Name, Adverse Events, Severity, and Outcome.
+* **React Input Form:** A text area to paste reports and a "Process" button.
+* **Results Display:** Clear presentation of the structured data on the frontend.
 
 ### Bonus Features
-* ⭐ **Simple Database (SQLite):** Reports are stored after processing.
-* ⭐ **GET /api/reports:** Endpoint to fetch a history of all processed reports.
-* ⭐ **Translation API:** **POST /api/translate** to translate the outcome to French/Swahili.
-* ⭐ **History View:** A table on the frontend showing past reports.
+* **Simple Database (SQLite):** Reports are stored after processing.
+* **GET /api/reports:** Endpoint to fetch a history of all processed reports.
+* **Translation API:** **POST /api/translate** to translate the outcome to French/Swahili.
+* **History View:** A table on the frontend showing past reports.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Component | Technology | Description |
 | :--- | :--- | :--- |
@@ -51,7 +51,7 @@ The project is split into two components:
 
 ---
 
-## 🚀 Getting Started (Local Development)
+## Getting Started (Local Development)
 
 ### Prerequisites
 Ensure you have the following installed:
