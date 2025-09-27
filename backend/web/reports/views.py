@@ -12,8 +12,6 @@ from .serializers import ReportSerializer
 
 from .processor import extract_fields, translate_outcome
 
-
-
 class ReportSerializer(serializers.ModelSerializer):
     adverse_events = serializers.SerializerMethodField()
     class Meta:
