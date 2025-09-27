@@ -1,0 +1,1 @@
+web: gunicorn medical_assistant_api.wsgi:application

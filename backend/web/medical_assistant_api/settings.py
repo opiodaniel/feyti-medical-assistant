@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,8 +26,6 @@ SECRET_KEY = 'django-insecure-!pc8@fg23p12+&cl$nnk3lqe7l6u6_f4e9=rp-in39j04yf*&@
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,15 +42,25 @@ INSTALLED_APPS = [
     'reports',
 ]
 
-# CORS settings for frontend communication
+# --- CORS Configuration ---
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
     "http://localhost:3000",
-    "http://localhost:5173/"
+    # Add your Vercel URL here (e.g., https://feyti-assistant.vercel.app)
+    os.environ.get('FRONTEND_URL', 'http://localhost:5173'),
 ]
+
+# Security setting for production host (CRITICAL)
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,11 +92,13 @@ WSGI_APPLICATION = 'medical_assistant_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# --- Database Setup (If using Render's PostgreSQL) ---
+# Render provides a full DATABASE_URL
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3', # Fallback for local
+        conn_max_age=600
+    )
 }
 
 
@@ -124,7 +136,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+# --- Static Files Configuration (using WhiteNoise) ---
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
