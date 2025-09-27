@@ -62,5 +62,11 @@ Ensure you have the following installed:
 ### 1. Project Setup
 ```bash
 # Clone the repository
-git clone <Your-Repo-URL>
+git clone https://github.com/opiodaniel/feyti-medical-assistant.git
 cd feyti-medical-assistant
+
+2. Backend Setup (Django API)
+Navigate to the backend directory and set up a virtual environment:
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
