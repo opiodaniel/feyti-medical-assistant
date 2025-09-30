@@ -13,7 +13,7 @@ def extract_drug(report_text):
     # Simple regex to find "Drug X" or "X drug" patterns
     match = re.search(r'Drug\s?(\w+)', report_text, re.IGNORECASE)
     if match:
-        return f"Drug {match.group(1)}"
+        return f"{match.group(1)}"
     # More general search for capitalized words that could be a drug name
     match = re.search(r'\b[A-Z][a-z]+[A-Z0-9]*\s?\b(drug|medication|tablet)', report_text, re.IGNORECASE)
     if match:
@@ -41,6 +41,7 @@ def extract_fields(report_text):
             outcome = key
             break
 
+    # 4. adverse_events
     events = []
     if 'nausea' in text_lower: events.append('nausea')
     if 'headache' in text_lower: events.append('headache')
