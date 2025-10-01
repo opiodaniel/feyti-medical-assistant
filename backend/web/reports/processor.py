@@ -46,6 +46,7 @@ def extract_fields(report_text):
     if 'nausea' in text_lower: events.append('nausea')
     if 'headache' in text_lower: events.append('headache')
     if 'rash' in text_lower: events.append('rash')
+    if 'fever' in text_lower: events.append('fever')
     if not events: events = ["Unspecified Adverse Event"]
 
     # Ensure the example case works perfectly
